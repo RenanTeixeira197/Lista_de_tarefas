@@ -8,9 +8,8 @@ class MeuModelo(models.Model):
     criado_em = models.DateTimeField(default=timezone.now)
     atualizado_em = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.nome
 
-def __str__(self):
-    return self.nome
-
-def get_absolute_url(self):
-    return reverse('meu_modelo_detail', kwargs={'pk': self.pk})
+    def get_absolute_url(self):
+        return reverse('meu_modelo_detail', kwargs={'pk': self.pk})
